@@ -34,11 +34,11 @@ header {
 #bookmark-links {
 	/*background: #333;*/
 }
-#bookmark-links ul li{
+#bookmark-links ol li{
 	padding-bottom: 5px;
 }
 
-#bookmark-links ul li:hover {
+#bookmark-links ol li:hover {
 	opacity: 0.6;
 }
 

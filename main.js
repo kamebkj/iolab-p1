@@ -11,7 +11,7 @@ $(document).ready(function() {
 			if (data.length!=0) {
 				// Clear the canvas & array
 				$("#bookmarks").empty();
-				$("#bookmark-links ul").empty();
+				$("#bookmark-links ol").empty();
 				tagAry = [];
 
 				// Put the tags into tag array
@@ -47,10 +47,10 @@ $(document).ready(function() {
 		var i = $(this).attr("id")[6];
 
 		$.getJSON('http://feeds.delicious.com/v2/json/'+$("#sourceUser").val()+"/"+tagAry[i].k+'?count=100&callback=?', function(data){
-			$("#bookmark-links ul").empty();
-			
+			$("#bookmark-links ol").empty();
+			data = data.reverse();
 			$.each(data, function(){
-				$("#bookmark-links ul").append('<a href="'+this.u+'" target="_blank">'+'<li>'+this.d+'</li></a>');
+				$("#bookmark-links ol").append('<a href="'+this.u+'" target="_blank">'+'<li>'+this.d+'</li></a>');
 			});
 		});
 	}
