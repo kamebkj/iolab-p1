@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
 	var tagAry = [];
-	// var ctx = $('#canvas')[0].getContext("2d");
 
 	$("#loadBookmarks").submit(getBookmark);
 
@@ -9,10 +8,10 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		$.getJSON('http://feeds.delicious.com/v2/json/tags/'+$("#sourceUser").val()+'?count=100&callback=?', function(data){
-			
 			if (data.length!=0) {
 				// Clear the canvas & array
 				$("#bookmarks").empty();
+				$("#bookmark-links ul").empty();
 				tagAry = [];
 
 				// Put the tags into tag array
@@ -23,11 +22,13 @@ $(document).ready(function() {
 
 				// Normalize the size of the circles
 				var total = 0;
-				for (var k=0; k<5; k++) {
+				var amount = (Object.keys(data).length<5 ? Object.keys(data).length : 5);
+
+				for (var k=0; k<amount; k++) {
 					total += tagAry[k].v;
 				}
 				// For the top 5 tags, each creates a circle
-				for (var i=0; i<5; i++) {
+				for (var i=0; i<amount; i++) {
 					var radius = (tagAry[i].v/total)*700;
 					$("#bookmarks").append('<div class="circle" id="circle'+i+'">'+tagAry[i].k+'<br>'+tagAry[i].v+'</div>');
 					$("#circle"+i).css("width",radius);
