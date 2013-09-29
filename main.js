@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	var tagAry = [];
 
+
 	$("#loadBookmarks").submit(getBookmark);
 
 	function getBookmark(event) {
@@ -30,10 +31,12 @@ $(document).ready(function() {
 				// For the top 5 tags, each creates a circle
 				for (var i=0; i<amount; i++) {
 					var radius = (tagAry[i].v/total)*700;
+					var circleColor = ["#2D7DDC", "#898989", "#FF9B00", "#393939", "#D6D6D6"]
 					$("#bookmarks").append('<div class="circle" id="circle'+i+'">'+tagAry[i].k+'<br>'+tagAry[i].v+'</div>');
 					$("#circle"+i).css("width",radius);
 					$("#circle"+i).css("height",radius);
 					$("#circle"+i).css("cursor","pointer");
+					$("#circle"+i).css("background-color", circleColor[i]);
 					$("#circle"+i).on("click", openBookmarkInTag);
 				}
 			}
