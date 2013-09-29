@@ -1,14 +1,31 @@
 body {
-	background: #CCC;
+	background: #fffs;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     size:14px;
+	margin: 30px auto;
 }
 
 header {
-	background: #222;
+	background: #2D7DDC;
 	color: #fff;
-	padding: 10px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	height: 50px;
+	padding: 30px;
 }
+
+
+header img {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+header h1 {
+	position: relative;
+	left: 20px;
+	top: -15px;
+}
+
 
 
 #container {
