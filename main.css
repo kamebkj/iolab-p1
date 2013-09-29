@@ -119,8 +119,10 @@ header h1 {
 #bookmark-links {
 	/*background: #333;*/
 }
+
 #bookmark-links ol li{
 	padding-bottom: 5px;
+	color: #393939;
 }
 
 #bookmark-links ol li:hover {

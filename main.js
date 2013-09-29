@@ -54,6 +54,7 @@ $(document).ready(function() {
 			data = data.reverse();
 			$.each(data, function(){
 				$("#bookmark-links ol").append('<a href="'+this.u+'" target="_blank">'+'<li>'+this.d+'</li></a>');
+				$("#left").css("min-height", 600+tagAry[i].v*13);
 			});
 		});
 	}
