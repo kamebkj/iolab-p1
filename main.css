@@ -135,8 +135,16 @@ header h1 {
 	border-radius: 700px;
 	display: inline-block;
 	margin-right: 10px;
+	margin-top: 60px;
+	margin-bottom: 40px;
+
 }
 
+.circle_text {
+	text-decoration: underline;
+	text-align: center;
+	margin-top: -50px;
+}
 
 .circle:hover {
 	opacity: 0.6;
