@@ -2,14 +2,14 @@ $(document).ready(function() {
 
 	var tagAry = [];
 
-
 	$("#loadBookmarks").submit(getBookmark);
 
 	function getBookmark(event) {
 		event.preventDefault();
 
 		$.getJSON('http://feeds.delicious.com/v2/json/tags/'+$("#sourceUser").val()+'?count=100&callback=?', function(data){
-			if (data.length!=0) {
+			// if data is an array with length==1, then it's returning error; otherwise it should return an object
+			if (data.length!=1) {
 				// Clear the canvas & array
 				$("#bookmarks").empty();
 				$("#bookmark-links ol").empty();
@@ -41,7 +41,7 @@ $(document).ready(function() {
 				}
 			}
 			else {
-				console.log("Fail to get data");
+				alert("Fail to get data");
 			}
 		});
 	}
